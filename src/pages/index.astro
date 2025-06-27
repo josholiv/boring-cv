@@ -1,0 +1,136 @@
+---
+import resume from '../data/resume.json';
+const { basics, education, work, publications, presentations, awards, skills } = resume;
+
+function formatDate(str) {
+  if (!str) return '';
+  const d = new Date(str);
+  return `${d.toLocaleString('default', { month: 'short' })} ${d.getFullYear()}`;
+}
+---
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>{basics.name} – CV</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <style>
+      :root { font-family: 'Arial', sans-serif; font-size: 11pt; line-height: 1.25; }
+      body {
+        margin: 0;
+        color: #000;
+        display: flex;
+        align-items: top;
+        justify-content: center;
+        min-height: 100vh;
+        }
+        .cv-container {
+        width: 100%;
+        max-width: 8.5in;
+        padding: 0in;
+        box-sizing: border-box;
+        background: white;
+        border: 1px solid #ccc;
+        }
+      h1, h2 { margin: 0; font-weight: 700; }
+      h1 { font-size: 18pt;
+           text-align: center; 
+            }
+      h2 { font-size: 12pt; margin-top: 1.2em; }
+      .section-item { margin-bottom: 0.6em; }
+      .subhead { font-style: italic; }
+      hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 0.3em 0 0.6em 0;
+            }
+      @media print {
+        @page { margin: 1in; }
+        a[href]:after { content: ''; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-container">
+    <h1>{basics.name}</h1>
+    <h2>Personal Information</h2>
+    <hr />
+        {basics.location.city}, {basics.location.region}<br/>  
+        {basics.email}<br/>
+        {basics.phone}<br/>
+        {basics.url}
+    
+    <section>
+      <h2>Education</h2>
+      <hr />
+      {education.map(ed => (
+        <div class='section-item'>
+          <strong>{ed.institution}</strong>, {ed.area} ({ed.studyType})<br/>
+          {formatDate(ed.startDate)} – {formatDate(ed.endDate)}
+        </div>
+      ))}
+    </section>
+
+    <section>
+      <h2>Publications</h2>
+      <hr />
+      <ol>
+        {publications.map(pub => (
+          <li class='section-item'>
+            {pub.name}. <em>{pub.publisher}</em>, {formatDate(pub.releaseDate)}.
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section>
+        <h2>Presentations</h2>
+        <hr />
+        <ol>
+        {presentations.map(pres => (
+          <li class='section-item'>
+            {pres.name}. <em>{pres.conference}</em>, {formatDate(pres.date)}.
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section>
+        <h2>Research Experience</h2>
+        <hr />
+    </section>
+
+    <section>
+        <h2>Teaching Experience</h2>
+        <hr />
+    </section>
+
+    <section>
+        <h2>Grants &amp; Fellowships</h2>
+        <hr />
+    </section>
+
+    <section>
+      <h2>Honors &amp; Awards</h2>
+      <hr />
+      <ul>
+        {awards.map(a => (
+          <li class='section-item'>
+            {a.title}, {a.awarder} – {formatDate(a.date)}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+        <h2>Professional Memberships</h2>
+        <hr />
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <p>{skills.map(s => s.name).join(', ')}</p>
+    </section>
+    </div>
+  </body>
+</html>
