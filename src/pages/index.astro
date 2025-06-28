@@ -15,7 +15,7 @@ function formatDate(str) {
     <title>{basics.name} – CV</title>
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <style>
-      :root { font-family: 'Arial', sans-serif; font-size: 11pt; line-height: 1.25; }
+      :root { font-family: 'Times New Roman', serif; font-size: 11pt; line-height: 1.25; }
       body {
         margin: 0;
         color: #000;
@@ -30,24 +30,29 @@ function formatDate(str) {
         padding: 0in;
         box-sizing: border-box;
         background: white;
-        border: 1px solid #ccc;
+        /* border: 1px solid red; */
         }
       h1, h2 { margin: 0; font-weight: 700; }
-      h1 { font-size: 18pt;
+      h1 { font-size: 14pt;
            text-align: center; 
             }
-      h2 { font-size: 12pt; margin-top: 1.2em; }
+      h2 { font-size: 12pt; margin-top: 1.2em; text-transform: uppercase }
       .section-item { margin-bottom: 0.6em; }
       .subhead { font-style: italic; }
       hr {
             border: none;
-            border-top: 1px solid #333;
-            margin: 0.3em 0 0.6em 0;
+            border-top: 1px solid #000;
+            margin: 0em 0 0.6em 0;
             }
       @media print {
         @page { margin: 1in; }
         a[href]:after { content: ''; }
       }
+      .apa-entry {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+       }
     </style>
   </head>
   <body>
@@ -55,7 +60,7 @@ function formatDate(str) {
     <h1>{basics.name}</h1>
     <h2>Personal Information</h2>
     <hr />
-        {basics.location.city}, {basics.location.region}<br/>  
+        {basics.location.address} <br/> {basics.location.city}, {basics.location.postalCode}<br/>  
         {basics.email}<br/>
         {basics.phone}<br/>
         {basics.url}
@@ -71,17 +76,18 @@ function formatDate(str) {
       ))}
     </section>
 
-    <section>
-      <h2>Publications</h2>
-      <hr />
-      <ol>
-        {publications.map(pub => (
-          <li class='section-item'>
-            {pub.name}. <em>{pub.publisher}</em>, {formatDate(pub.releaseDate)}.
-          </li>
-        ))}
-      </ol>
-    </section>
+<section>
+  <h2>Publications</h2> <!-- replace Doe, J. below with your name to automatically bold each instance -->
+  <hr />
+  <div>
+    {publications.map(pub => (
+      <div class="apa-entry">
+        <Fragment set:html={pub.authors.replace(/Doe, J\./g, "<strong>Doe, J.</strong>")} /> 
+        ({formatDate(pub.releaseDate)}). <i>{pub.name}</i>. <em>{pub.publisher}</em>. {pub.url}
+      </div>
+    ))}
+  </div>
+</section>
 
     <section>
         <h2>Presentations</h2>
@@ -129,6 +135,7 @@ function formatDate(str) {
 
     <section>
       <h2>Skills</h2>
+      <hr />
       <p>{skills.map(s => s.name).join(', ')}</p>
     </section>
     </div>

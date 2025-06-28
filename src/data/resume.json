@@ -1,21 +1,21 @@
 {
   "basics": {
     "name": "John Doe",
-    "label": "Programmer",
+    "label": "Doctoral Student",
     "image": "",
     "email": "email@email.com",
-    "phone": "(555) 555-5555",
-    "url": "https://website.com",
+    "phone": "(333) 333-3333",
+    "url": "https://[website].com",
     "summary": "A summary of John Doe…",
     "location": {
-      "address": "2712 Broadway St",
+      "address": "123 Main Street",
       "postalCode": "CA 94115",
       "city": "San Francisco",
       "countryCode": "US",
       "region": "California"
     },
     "profiles": [{
-      "network": "Twitter",
+      "network": "Twitter", 
       "username": "john",
       "url": "https://twitter.com/john"
     }]
@@ -67,17 +67,27 @@
     "url": "https://certificate.com"
   }],
   "publications": [{
-    "name": "Publication",
+    "name": "A very cool and impressive publication",
+    "authors": "Doe, J., Author A., Author, B., Author., C,. Author, D., Author, E., Author., F, Author, G., Author, H.",
     "publisher": "Publisher",
-    "releaseDate": "2014-10-01",
-    "url": "https://publication.com",
+    "releaseDate": "2025-01-02",
+    "url": "https://first-publication-link.com",
     "summary": "Description…"
   },
   {
-    "name": "Second Publication",
+    "name": "A very neat and clever publication",
+    "authors": "Author., I,. Doe, J., Author, J., Author, K., Author, L., Author M.",
     "publisher": "Another Publisher",
-    "releaseDate": "2018-06-15",
-    "url": "https://second-publication.com",
+    "releaseDate": "2024-04-05",
+    "url": "https://second-publication-link.com",
+    "summary": "Another description…"
+  },
+   {
+    "name": "A very timely and important publication",
+    "authors": "Author, N., Author., O,. Author, P., Author, Q., Doe, J.",
+    "publisher": "Yet Another Publisher",
+    "releaseDate": "2023-10-21",
+    "url": "https://third-publication-link.com",
     "summary": "Another description…"
   }
     ],
