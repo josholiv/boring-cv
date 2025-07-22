@@ -43,15 +43,27 @@
     ]
   }],
   "education": [{
-    "institution": "College University",
+    "institution": "Very Prestigious University",
     "url": "https://institution.com/",
-    "area": "Software Development",
-    "studyType": "Bachelor",
-    "startDate": "2011-01-01",
-    "endDate": "2013-01-01",
+    "area": "Neuroscience",
+    "studyType": "PhD",
+    "startDate": "2019-09-15",
+    "endDate": "2025-04-15",
     "score": "4.0",
     "courses": [
-      "DB1101 - Basic SQL"
+      "PSY500 - Computational Neuroscience"
+    ]
+  },
+{
+    "institution": "College University",
+    "url": "https://institution.com/",
+    "area": "Psychology",
+    "studyType": "BS",
+    "startDate": "2014-08-15",
+    "endDate": "2018-05-15",
+    "score": "4.0",
+    "courses": [
+      "PSY101 - Intro to Psychology"
     ]
   }],
   "awards": [{
@@ -64,44 +76,66 @@
     "name": "Certificate",
     "date": "2021-11-07",
     "issuer": "Company",
-    "url": "https://certificate.com"
+    "url": "https://[certificate].com"
   }],
   "publications": [{
     "name": "A very cool and impressive publication",
     "authors": "Doe, J., Author A., Author, B., Author., C,. Author, D., Author, E., Author., F, Author, G., Author, H.",
     "publisher": "Publisher",
-    "releaseDate": "2025-01-02",
-    "url": "https://first-publication-link.com",
+    "year": "2025",
+    "url": "https://[first-publication-url].com",
     "summary": "Description…"
   },
   {
     "name": "A very neat and clever publication",
     "authors": "Author., I,. Doe, J., Author, J., Author, K., Author, L., Author M.",
     "publisher": "Another Publisher",
-    "releaseDate": "2024-04-05",
-    "url": "https://second-publication-link.com",
+    "year": "2024",
+    "url": "https://[second-publication-url].com",
     "summary": "Another description…"
   },
    {
     "name": "A very timely and important publication",
     "authors": "Author, N., Author., O,. Author, P., Author, Q., Doe, J.",
     "publisher": "Yet Another Publisher",
-    "releaseDate": "2023-10-21",
-    "url": "https://third-publication-link.com",
+    "year": "2023",
+    "url": "https://[third-publication-url].com",
     "summary": "Another description…"
   }
     ],
-"presentations": [{
-    "name": "Presentation",
-    "conference": "Conference",
-    "date": "2014-10-01",
+"presentations": [
+{
+    "name": "A really great presentation about an interesting scientific topic",
+    "authors": "Doe, J.*, Author A., Author, B., Author., C,. Author, D., Author, E., Author., F, Author, G., Author, H.",
+    "type": "Poster presentation",
+    "conference": "Big Neuroscience Conference",
+    "location": "Chicago, IL, United States",
+    "year": "2025",
+    "dateRange": "January 26-29",
+    "url": "https://[first-presentation-url].com",
     "summary": "Description…"
   },
-  {
-    "name": "Second Presentation",
-    "conference": "Another Conference",
-    "date": "2018-06-15",
-    "summary": "Another description…"
+   {
+    "name": "Unique presentation about a novel scientific finding",
+    "authors": "Author, D., Author, E.*, Doe, J., Author., F",
+    "type": "Poster presentation",
+    "conference": "International Scientific Conference",
+    "location": "São Paulo, SP, Brazil",
+    "year": "2024",
+    "dateRange": "October 26-29",
+    "url": "https://[second-presentation-url].com",
+    "summary": "Description…"
+  },
+   {
+    "name": "Poster about exciting psychology research",
+    "authors": "Author, G.*, Author, H., Author, I., Author, J., Doe, J., Author, K.",
+    "type": "Poster presentation",
+    "conference": "Niche Psychology Conference",
+    "location": "Tokyo, Tokyo, Japan",
+    "year": "2023",
+    "dateRange": "September 13-17",
+    "url": "https://[third-presentation-url].com",
+    "summary": "Description…"
   }
     ],
   "skills": [{

@@ -15,129 +15,179 @@ function formatDate(str) {
     <title>{basics.name} – CV</title>
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <style>
-      :root { font-family: 'Times New Roman', serif; font-size: 11pt; line-height: 1.25; }
+      :root {
+        font-family: 'Garamond', serif;
+        font-size: 11pt;
+        line-height: 1.25;
+      }
       body {
         margin: 0;
         color: #000;
         display: flex;
-        align-items: top;
+        align-items: flex-start;
         justify-content: center;
         min-height: 100vh;
-        }
-        .cv-container {
+        background: #d8d7ce;
+      }
+
+      .cv-container {
         width: 100%;
         max-width: 8.5in;
-        padding: 0in;
+        padding: 1in;
+        margin-top: 1rem;
+         margin-bottom: 1rem;
         box-sizing: border-box;
         background: white;
-        /* border: 1px solid red; */
-        }
-      h1, h2 { margin: 0; font-weight: 700; }
-      h1 { font-size: 14pt;
-           text-align: center; 
-            }
-      h2 { font-size: 12pt; margin-top: 1.2em; text-transform: uppercase }
-      .section-item { margin-bottom: 0.6em; }
-      .subhead { font-style: italic; }
-      hr {
-            border: none;
-            border-top: 1px solid #000;
-            margin: 0em 0 0.6em 0;
-            }
-      @media print {
-        @page { margin: 1in; }
-        a[href]:after { content: ''; }
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
+
+      h1, h2 {
+        margin: 0;
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: 16pt;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 12pt;
+        margin-top: 1.2em;
+        text-transform: uppercase;
+      }
+
+      .section-item {
+        margin-bottom: 0.6em;
+      }
+
+      .subhead {
+        font-style: italic;
+      }
+
+      hr {
+        border: none;
+        border-top: 1pt solid #000;
+        margin: 0em 0 0.6em 0;
+      }
+
       .apa-entry {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    text-indent: -1.5rem;
-       }
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        text-indent: -1.5rem;
+      }
+
+
+      @media print {
+        @page {
+          margin: 1in;
+        }
+
+        body {
+          background: white;
+        }
+
+        .cv-container {
+          padding: 0in !important;
+          box-shadow: none !important;
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+
+        a[href]:after {
+          content: '';
+        }
+      }
     </style>
   </head>
   <body>
     <div class="cv-container">
-    <h1>{basics.name}</h1>
-    <h2>Personal Information</h2>
-    <hr />
-        {basics.location.address} <br/> {basics.location.city}, {basics.location.postalCode}<br/>  
-        {basics.email}<br/>
-        {basics.phone}<br/>
-        {basics.url}
-    
-    <section>
-      <h2>Education</h2>
+      <h1>{basics.name}</h1>
+      <h2>Personal Information</h2>
       <hr />
-      {education.map(ed => (
-        <div class='section-item'>
-          <strong>{ed.institution}</strong>, {ed.area} ({ed.studyType})<br/>
-          {formatDate(ed.startDate)} – {formatDate(ed.endDate)}
+      {basics.location.address} <br />
+      {basics.location.city}, {basics.location.postalCode}<br />
+      {basics.email}<br />
+      {basics.phone}<br />
+      {basics.url}
+
+      <section>
+        <h2>Education</h2>
+        <hr />
+        {education.map(ed => (
+          <div class="section-item">
+            <strong>{ed.institution}</strong>, {ed.area} ({ed.studyType})<br />
+            {formatDate(ed.startDate)} – {formatDate(ed.endDate)}
+          </div>
+        ))}
+      </section>
+
+      <section>
+        <h2>Publications</h2>
+        <hr />
+        <div>
+          {publications.map(pub => (
+            <div class="apa-entry">
+              <Fragment set:html={pub.authors.replace(/Doe, J\./g, "<strong>Doe, J.</strong>")} />
+              ({pub.year}). {pub.name}. <em>{pub.publisher}</em>. <a href={pub.url} target="_blank">{pub.url}</a>
+            </div>
+          ))}
         </div>
-      ))}
-    </section>
+      </section>
 
-<section>
-  <h2>Publications</h2> <!-- replace Doe, J. below with your name to automatically bold each instance -->
-  <hr />
-  <div>
-    {publications.map(pub => (
-      <div class="apa-entry">
-        <Fragment set:html={pub.authors.replace(/Doe, J\./g, "<strong>Doe, J.</strong>")} /> 
-        ({formatDate(pub.releaseDate)}). <i>{pub.name}</i>. <em>{pub.publisher}</em>. {pub.url}
-      </div>
-    ))}
-  </div>
-</section>
-
-    <section>
+      <section>
         <h2>Presentations</h2>
         <hr />
-        <ol>
-        {presentations.map(pres => (
-          <li class='section-item'>
-            {pres.name}. <em>{pres.conference}</em>, {formatDate(pres.date)}.
-          </li>
-        ))}
-      </ol>
-    </section>
+        <div>
+          {presentations.map(pres => (
+            <div class="apa-entry">
+              <Fragment set:html={pres.authors.replace(/Doe, J\./g, "<strong>Doe, J.</strong>")} />
+              ({pres.year}, {pres.dateRange}). <i>{pres.name}</i> [{pres.type}]. {pres.conference}, {pres.location}. <a href={pres.url} target="_blank">{pres.url}</a>
+            </div>
+          ))}
+        </div>
+        <div>
+          *Presenter
+        </div>
+      </section>
 
-    <section>
+      <section>
         <h2>Research Experience</h2>
         <hr />
-    </section>
+      </section>
 
-    <section>
+      <section>
         <h2>Teaching Experience</h2>
         <hr />
-    </section>
+      </section>
 
-    <section>
+      <section>
         <h2>Grants &amp; Fellowships</h2>
         <hr />
-    </section>
+      </section>
 
-    <section>
-      <h2>Honors &amp; Awards</h2>
-      <hr />
-      <ul>
-        {awards.map(a => (
-          <li class='section-item'>
-            {a.title}, {a.awarder} – {formatDate(a.date)}
-          </li>
-        ))}
-      </ul>
-    </section>
+      <section>
+        <h2>Honors &amp; Awards</h2>
+        <hr />
+        <ul>
+          {awards.map(a => (
+            <li class="section-item">
+              {a.title}, {a.awarder} – {formatDate(a.date)}
+            </li>
+          ))}
+        </ul>
+      </section>
 
-    <section>
+      <section>
         <h2>Professional Memberships</h2>
         <hr />
-    </section>
+      </section>
 
-    <section>
-      <h2>Skills</h2>
-      <hr />
-      <p>{skills.map(s => s.name).join(', ')}</p>
-    </section>
+      <section>
+        <h2>Skills</h2>
+        <hr />
+        <p>{skills.map(s => s.name).join(', ')}</p>
+      </section>
     </div>
   </body>
 </html>
