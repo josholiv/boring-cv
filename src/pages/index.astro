@@ -1,6 +1,6 @@
 ---
-import resume from '../data/resume.json';
-const { basics, education, work, publications, presentations, awards, skills } = resume;
+import cv from '../data/cv.json';
+const { basics, education, work, publications, presentations, researchExperience, awards, skills } = cv;
 
 function formatDate(str) {
   if (!str) return '';
@@ -77,6 +77,21 @@ function formatDate(str) {
         text-indent: -1.5rem;
       }
 
+      .experience-entry {
+        margin-bottom: 1rem;
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      .date-range {
+        white-space: nowrap;
+        font-weight: normal;
+      }
+
 
       @media print {
         @page {
@@ -151,10 +166,28 @@ function formatDate(str) {
         </div>
       </section>
 
-      <section>
+     <section>
         <h2>Research Experience</h2>
         <hr />
+        {researchExperience.map(res => (
+          <div class="section-item experience-entry">
+            <div class="experience-header">
+              <strong>{res.lab}</strong>
+              <span class="date-range">{formatDate(res.startDate)} – {formatDate(res.endDate)}</span>
+            </div>
+            <div>{res.institution}</div>
+            <div>Mentor: {res.mentor}</div>
+            <div>Title: {res.title}</div>
+            <ul>
+              {res.roles.map(role => (
+                <li>{role}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </section>
+
+
 
       <section>
         <h2>Teaching Experience</h2>

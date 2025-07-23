@@ -138,6 +138,22 @@
     "summary": "Description…"
   }
     ],
+
+  "researchExperience": [{
+    "lab": "Memory Neuroscience Lab",
+    "institution": "Very Prestigious University",
+    "mentor": "Jane Author, PhD",
+    "title": "Research Assistant",
+    "startDate": "2019-09-15",
+    "endDate": "2025-04-15",
+    "roles": [
+      "Administered neuropsychological tests",
+      "Collected fMRI and behavioral data",
+      "Presented conference posters",
+      "Processed and analyzed MRI data"
+    ]
+  }],
+
   "skills": [{
     "name": "Web Development",
     "level": "Master",
