@@ -14,7 +14,6 @@ function formatDateFull(str) {
   const d = new Date(str);
   return d.toLocaleDateString('default', { year: 'numeric', month: 'long', day: 'numeric' });
 }
-
 ---
 <!DOCTYPE html>
 <html lang='en'>
@@ -24,7 +23,15 @@ function formatDateFull(str) {
     <meta name='viewport' content='width=device-width, initial-scale=1' />
   </head>
 
+<script>
+  document.getElementById('print-button').addEventListener('click', function() {
+    window.print();
+  });
+</script>
+
   <body>
+    <button id="print-button" class="print-button">Print</button>
+
     <div class="cv-container">
       <div class="page-header"> 
         <div class="item-header">

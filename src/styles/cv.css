@@ -4,6 +4,20 @@
   line-height: 1.25;
 }
 
+.print-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 10pt;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
 .page-header {
   font-size: 12pt;
   margin-bottom: 0.25in;
@@ -112,6 +126,11 @@ hr {
 
 
 @media print {
+
+  .print-button {
+    display: none;
+  }
+
   @page {
     margin-top: 0.5in;
     margin-left: 1in;
@@ -160,3 +179,10 @@ hr {
     grid-template-columns: 1fr; /* collapse to single column */
   }
 }
+
+@media screen and (max-width: 10.5in) {
+  .print-button {
+    display: none;
+  }
+}
+
