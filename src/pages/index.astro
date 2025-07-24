@@ -1,4 +1,5 @@
 ---
+import '../styles/cv.css';
 import cv from '../data/cv.json';
 const { basics, education, work, publications, presentations, researchExperience, awards, skills } = cv;
 
@@ -14,107 +15,8 @@ function formatDate(str) {
     <meta charset='utf-8' />
     <title>{basics.name} – CV</title>
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <style>
-      :root {
-        font-family: 'Garamond', serif;
-        font-size: 11pt;
-        line-height: 1.25;
-      }
-      body {
-        margin: 0;
-        color: #000;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: 100vh;
-        background: #d8d7ce;
-      }
-
-      .cv-container {
-        width: 100%;
-        max-width: 8.5in;
-        padding: 1in;
-        margin-top: 1rem;
-         margin-bottom: 1rem;
-        box-sizing: border-box;
-        background: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      h1, h2 {
-        margin: 0;
-        font-weight: 700;
-      }
-
-      h1 {
-        font-size: 16pt;
-        text-align: center;
-      }
-
-      h2 {
-        font-size: 12pt;
-        margin-top: 1.2em;
-        text-transform: uppercase;
-      }
-
-      .section-item {
-        margin-bottom: 0.6em;
-      }
-
-      .subhead {
-        font-style: italic;
-      }
-
-      hr {
-        border: none;
-        border-top: 1pt solid #000;
-        margin: 0em 0 0.6em 0;
-      }
-
-      .apa-entry {
-        margin-bottom: 1rem;
-        padding-left: 1.5rem;
-        text-indent: -1.5rem;
-      }
-
-      .experience-entry {
-        margin-bottom: 1rem;
-      }
-
-      .experience-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-      }
-
-      .date-range {
-        white-space: nowrap;
-        font-weight: normal;
-      }
-
-
-      @media print {
-        @page {
-          margin: 1in;
-        }
-
-        body {
-          background: white;
-        }
-
-        .cv-container {
-          padding: 0in !important;
-          box-shadow: none !important;
-          margin-top: 0 !important;
-          margin-bottom: 0 !important;
-        }
-
-        a[href]:after {
-          content: '';
-        }
-      }
-    </style>
   </head>
+
   <body>
     <div class="cv-container">
       <h1>{basics.name}</h1>
@@ -172,15 +74,14 @@ function formatDate(str) {
         {researchExperience.map(res => (
           <div class="section-item experience-entry">
             <div class="experience-header">
-              <strong>{res.lab}</strong>
+              <div><strong>{res.lab}</strong>, {res.institution}</div>
               <span class="date-range">{formatDate(res.startDate)} – {formatDate(res.endDate)}</span>
             </div>
-            <div>{res.institution}</div>
             <div>Mentor: {res.mentor}</div>
             <div>Title: {res.title}</div>
-            <ul>
-              {res.roles.map(role => (
-                <li>{role}</li>
+            <ul class="two-column-list">
+              {res.roles.map((role, index) => (
+                <li key={index}>{role}</li>
               ))}
             </ul>
           </div>

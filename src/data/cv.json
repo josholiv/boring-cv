@@ -7,185 +7,244 @@
     "phone": "(333) 333-3333",
     "url": "https://[website].com",
     "summary": "A summary of John Doe…",
-    "location": {
-      "address": "123 Main Street",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+    "location": 
+      {
+        "address": "123 Main Street",
+        "postalCode": "CA 94115",
+        "city": "San Francisco",
+        "countryCode": "US",
+        "region": "California"
+      },
+    "profiles": [
+      {
+        "network": "Twitter", 
+        "username": "john",
+        "url": "https://twitter.com/john"
+      }
+    ]
+  },
+
+  "education": [
+    {
+      "institution": "Very Prestigious University",
+      "url": "https://institution.com/",
+      "area": "Neuroscience",
+      "studyType": "PhD",
+      "startDate": "2019-09-15",
+      "endDate": "2025-04-15",
+      "score": "4.0",
+      "courses": [
+        "PSY500 - Computational Neuroscience"
+      ]
     },
-    "profiles": [{
-      "network": "Twitter", 
-      "username": "john",
-      "url": "https://twitter.com/john"
-    }]
-  },
-  "work": [{
-    "name": "Company",
-    "position": "President",
-    "url": "https://company.com",
-    "startDate": "2013-01-01",
-    "endDate": "2014-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Started the company"
-    ]
-  }],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "url": "https://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-  "education": [{
-    "institution": "Very Prestigious University",
-    "url": "https://institution.com/",
-    "area": "Neuroscience",
-    "studyType": "PhD",
-    "startDate": "2019-09-15",
-    "endDate": "2025-04-15",
-    "score": "4.0",
-    "courses": [
-      "PSY500 - Computational Neuroscience"
-    ]
-  },
-{
-    "institution": "College University",
-    "url": "https://institution.com/",
-    "area": "Psychology",
-    "studyType": "BS",
-    "startDate": "2014-08-15",
-    "endDate": "2018-05-15",
-    "score": "4.0",
-    "courses": [
-      "PSY101 - Intro to Psychology"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "This is a summary."
-  }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021-11-07",
-    "issuer": "Company",
-    "url": "https://[certificate].com"
-  }],
-  "publications": [{
-    "name": "A very cool and impressive publication",
-    "authors": "Doe, J., Author A., Author, B., Author., C,. Author, D., Author, E., Author., F, Author, G., Author, H.",
-    "publisher": "Publisher",
-    "year": "2025",
-    "url": "https://[first-publication-url].com",
-    "summary": "Description…"
-  },
-  {
-    "name": "A very neat and clever publication",
-    "authors": "Author., I,. Doe, J., Author, J., Author, K., Author, L., Author M.",
-    "publisher": "Another Publisher",
-    "year": "2024",
-    "url": "https://[second-publication-url].com",
-    "summary": "Another description…"
-  },
-   {
-    "name": "A very timely and important publication",
-    "authors": "Author, N., Author., O,. Author, P., Author, Q., Doe, J.",
-    "publisher": "Yet Another Publisher",
-    "year": "2023",
-    "url": "https://[third-publication-url].com",
-    "summary": "Another description…"
-  }
-    ],
+    {
+      "institution": "College University",
+      "url": "https://institution.com/",
+      "area": "Psychology",
+      "studyType": "BS",
+      "startDate": "2014-08-15",
+      "endDate": "2018-05-15",
+      "score": "4.0",
+      "courses": [
+        "PSY101 - Intro to Psychology"
+      ]
+    }
+  ],
+
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "This is a summary."
+    },
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "This is a summary."
+    }
+  ],
+
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://[certificate].com"
+    }
+  ],
+
+  "publications": [
+    {
+      "name": "A very cool and impressive publication",
+      "authors": "Doe, J., Author A., Author, B., Author., C,. Author, D., Author, E., Author., F, Author, G., Author, H.",
+      "publisher": "Publisher",
+      "year": "2025",
+      "url": "https://[first-publication-url].com",
+      "summary": "Description…"
+    },
+    {
+      "name": "A very neat and clever publication",
+      "authors": "Author., I,. Doe, J., Author, J., Author, K., Author, L., Author M.",
+      "publisher": "Another Publisher",
+      "year": "2024",
+      "url": "https://[second-publication-url].com",
+      "summary": "Another description…"
+    },
+    {
+      "name": "A very timely and important publication",
+      "authors": "Author, N., Author., O,. Author, P., Author, Q., Doe, J.",
+      "publisher": "Yet Another Publisher",
+      "year": "2023",
+      "url": "https://[third-publication-url].com",
+      "summary": "Another description…"
+    }
+  ],
+
 "presentations": [
-{
-    "name": "A really great presentation about an interesting scientific topic",
-    "authors": "Doe, J.*, Author A., Author, B., Author., C,. Author, D., Author, E., Author., F, Author, G., Author, H.",
-    "type": "Poster presentation",
-    "conference": "Big Neuroscience Conference",
-    "location": "Chicago, IL, United States",
-    "year": "2025",
-    "dateRange": "January 26-29",
-    "url": "https://[first-presentation-url].com",
-    "summary": "Description…"
-  },
-   {
-    "name": "Unique presentation about a novel scientific finding",
-    "authors": "Author, D., Author, E.*, Doe, J., Author., F",
-    "type": "Poster presentation",
-    "conference": "International Scientific Conference",
-    "location": "São Paulo, SP, Brazil",
-    "year": "2024",
-    "dateRange": "October 26-29",
-    "url": "https://[second-presentation-url].com",
-    "summary": "Description…"
-  },
-   {
-    "name": "Poster about exciting psychology research",
-    "authors": "Author, G.*, Author, H., Author, I., Author, J., Doe, J., Author, K.",
-    "type": "Poster presentation",
-    "conference": "Niche Psychology Conference",
-    "location": "Tokyo, Tokyo, Japan",
-    "year": "2023",
-    "dateRange": "September 13-17",
-    "url": "https://[third-presentation-url].com",
-    "summary": "Description…"
-  }
-    ],
+    {
+      "name": "A really great presentation about an interesting scientific topic",
+      "authors": "Doe, J.*, Author A., Author, B., Author., C,. Author, D., Author, E., Author., F, Author, G., Author, H.",
+      "type": "Poster presentation",
+      "conference": "Big Neuroscience Conference",
+      "location": "Chicago, IL, United States",
+      "year": "2025",
+      "dateRange": "January 26-29",
+      "url": "https://[first-presentation-url].com",
+      "summary": "Description…"
+    },
+    {
+      "name": "Unique presentation about a novel scientific finding",
+      "authors": "Author, D., Author, E.*, Doe, J., Author., F",
+      "type": "Poster presentation",
+      "conference": "International Scientific Conference",
+      "location": "São Paulo, SP, Brazil",
+      "year": "2024",
+      "dateRange": "October 26-29",
+      "url": "https://[second-presentation-url].com",
+      "summary": "Description…"
+    },
+    {
+      "name": "Poster about exciting psychology research",
+      "authors": "Author, G.*, Author, H., Author, I., Author, J., Doe, J., Author, K.",
+      "type": "Poster presentation",
+      "conference": "Niche Psychology Conference",
+      "location": "Tokyo, Tokyo, Japan",
+      "year": "2023",
+      "dateRange": "September 13-17",
+      "url": "https://[third-presentation-url].com",
+      "summary": "Description…"
+    }
+  ],
 
-  "researchExperience": [{
-    "lab": "Memory Neuroscience Lab",
-    "institution": "Very Prestigious University",
-    "mentor": "Jane Author, PhD",
-    "title": "Research Assistant",
-    "startDate": "2019-09-15",
-    "endDate": "2025-04-15",
-    "roles": [
-      "Administered neuropsychological tests",
-      "Collected fMRI and behavioral data",
-      "Presented conference posters",
-      "Processed and analyzed MRI data"
-    ]
-  }],
+  "researchExperience": [
+    {
+      "lab": "Memory Neuroscience Lab",
+      "institution": "Very Prestigious University",
+      "mentor": "Jane Author, PhD",
+      "title": "Research Assistant",
+      "startDate": "2019-09-15",
+      "endDate": "2025-04-15",
+      "roles": [
+        "Administered neuropsychological tests",
+        "Collected fMRI and behavioral data",
+        "Designed experimental paradigms",
+        "Processed and analyzed MRI data",
+        "Prepared results for grant applications, presentations, and publications",
+        "Developed data analysis scripts"
+      ]
+    },
+    {
+      "lab": "Neuroimaging Lab",
+      "institution": "College University",
+      "mentor": "John Science, PhD",
+      "title": "Lab Manager",
+      "startDate": "2015-10-15",
+      "endDate": "2019-06-15",
+      "roles": [
+        "Coordinated participant recruitment and scheduling for neuroimaging studies",
+        "Managed Institutional Review Board (IRB) documentation and study compliance",
+        "Trained and supervised research assistants on data collection protocols",
+        "Prepared and presented posters at scientific conferences"
+      ]
+    }
+  ],
 
-  "skills": [{
-    "name": "Web Development",
-    "level": "Master",
-    "keywords": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ]
-  }],
-  "languages": [{
-    "language": "English",
-    "fluency": "Native speaker"
-  }],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
-  }],
-  "projects": [{
-    "name": "Project",
-    "startDate": "2019-01-01",
-    "endDate": "2021-01-01",
-    "description": "Description...",
-    "highlights": [
-      "Won award at AIHacks 2016"
-    ],
-    "url": "https://project.com/"
-  }]
+    "work": [
+    {
+      "name": "Company",
+      "position": "President",
+      "url": "https://company.com",
+      "startDate": "2013-01-01",
+      "endDate": "2014-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Started the company"
+      ]
+    }
+  ],
+
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }
+  ],
+
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ],
+
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  
+  "projects": [
+    {
+      "name": "Project",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "Description...",
+      "highlights": [
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    }
+  ]
 }

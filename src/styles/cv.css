@@ -1,0 +1,145 @@
+:root {
+  font-family: 'Garamond', serif;
+  font-size: 11pt;
+  line-height: 1.25;
+}
+body {
+  margin: 0;
+  color: #000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  background: #d8d7ce;
+}
+
+.cv-container {
+  width: 100%;
+  max-width: 8.5in;
+  padding: 1in;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 16pt;
+  text-align: center;
+}
+
+h2 {
+  font-size: 12pt;
+  margin-top: 1.2em;
+  text-transform: uppercase;
+}
+
+.section-item {
+  margin-bottom: 0.6em;
+}
+
+.subhead {
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1pt solid #000;
+  margin: 0em 0 0.6em 0;
+}
+
+.apa-entry {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+}
+
+.experience-entry {
+  margin-bottom: 1rem;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.date-range {
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.two-column-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  list-style: none; /* Remove default bullets */
+}
+
+.two-column-list li::before {
+  content: "•"; /* Add bullet manually */
+  position: absolute;
+  left: 0;
+}
+
+.two-column-list li {
+  position: relative;
+  padding-left: 1em;  /* space for the bullet */
+  margin-left: 1.5em;   /* indent whole block */
+  margin-bottom: 0em;
+}
+
+
+
+@media print {
+  @page {
+    margin: 1in;
+  }
+
+  body {
+    background: white;
+  }
+
+  .cv-container {
+    padding: 0in !important;
+    box-shadow: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  a[href]:after {
+    content: '';
+  }
+}
+
+@media screen and (max-width: 6.5in) {
+  .cv-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem; /* instead of 1in */
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  h1 {
+    font-size: 14pt;
+  }
+
+  h2 {
+    font-size: 11pt;
+  }
+
+  :root {
+    font-size: 10.5pt;
+  }
+  
+  .two-column-list {
+    grid-template-columns: 1fr; /* collapse to single column */
+  }
+}
