@@ -3,6 +3,12 @@
   font-size: 11pt;
   line-height: 1.25;
 }
+
+.page-header {
+  font-size: 12pt;
+  margin-bottom: 0.25in;
+}
+
 body {
   margin: 0;
   color: #000;
@@ -16,7 +22,9 @@ body {
 .cv-container {
   width: 100%;
   max-width: 8.5in;
-  padding: 1in;
+  padding-top: 0.625in;
+  padding-left: 1in;
+  padding-right: 1in;
   margin-top: 1rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
@@ -60,11 +68,11 @@ hr {
   text-indent: -1.5rem;
 }
 
-.experience-entry {
+.item-entry {
   margin-bottom: 1rem;
 }
 
-.experience-header {
+.item-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -95,11 +103,20 @@ hr {
   margin-bottom: 0em;
 }
 
+.indent-item {
+  margin-left: 1.5em; /* indent item */
+  margin-top: 0.5em; /* also increase top margin */
+  margin-bottom: -0.5em; /* also reduce bottom margin */
+}
+
 
 
 @media print {
   @page {
-    margin: 1in;
+    margin-top: 0.5in;
+    margin-left: 1in;
+    margin-right: 1in;
+    margin-bottom: 1in;
   }
 
   body {

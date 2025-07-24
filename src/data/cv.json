@@ -1,4 +1,6 @@
 {
+  "versionDate": "2025-07-24",
+
   "basics": {
     "name": "John Doe",
     "label": "Doctoral Student",
@@ -33,8 +35,12 @@
       "startDate": "2019-09-15",
       "endDate": "2025-04-15",
       "score": "4.0",
+      "advisor": "Jane Author, PhD",
       "courses": [
-        "PSY500 - Computational Neuroscience"
+        "NEURO520, Computational Neuroscience",
+        "NEURO650, Neuroanatomy",
+        "NEURO555, Neural Mechanisms of Memory",
+        "NEURO680, Affective Neuroscience"
       ]
     },
     {
@@ -46,32 +52,7 @@
       "endDate": "2018-05-15",
       "score": "4.0",
       "courses": [
-        "PSY101 - Intro to Psychology"
       ]
-    }
-  ],
-
-  "awards": [
-    {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "This is a summary."
-    },
-    {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "This is a summary."
-    }
-  ],
-
-  "certificates": [
-    {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://[certificate].com"
     }
   ],
 
@@ -171,7 +152,26 @@
     }
   ],
 
-    "work": [
+"teachingExperience": [
+    {
+      "course": "STATS120, Intro to Statistics",
+      "institution": "College University",
+      "instructor": "Jeremy Numbers, PhD",
+      "title": "Undergraduate Teaching Assistant",
+      "startDate": "2017-1-15",
+      "endDate": "2017-5-15"
+    },  
+    {
+      "course": "PSYCH345, Abnormal Psychology",
+      "institution": "College University",
+      "instructor": "Mary Professor, PhD",
+      "title": "Undergraduate Teaching Assistant",
+      "startDate": "2016-08-15",
+      "endDate": "2017-12-15"
+    }
+  ],
+
+  "work": [
     {
       "name": "Company",
       "position": "President",
@@ -182,6 +182,21 @@
       "highlights": [
         "Started the company"
       ]
+    }
+  ],
+
+      "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "This is a summary."
+    },
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "This is a summary."
     }
   ],
 
@@ -208,6 +223,15 @@
         "CSS",
         "JavaScript"
       ]
+    }
+  ],
+
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://[certificate].com"
     }
   ],
 

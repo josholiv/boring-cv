@@ -1,13 +1,20 @@
 ---
 import '../styles/cv.css';
 import cv from '../data/cv.json';
-const { basics, education, work, publications, presentations, researchExperience, awards, skills } = cv;
+const { versionDate, basics, education, work, publications, presentations, researchExperience, teachingExperience, awards, skills } = cv;
 
 function formatDate(str) {
   if (!str) return '';
   const d = new Date(str);
   return `${d.toLocaleString('default', { month: 'short' })} ${d.getFullYear()}`;
 }
+
+function formatDateFull(str) {
+  if (!str) return '';
+  const d = new Date(str);
+  return d.toLocaleDateString('default', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
 ---
 <!DOCTYPE html>
 <html lang='en'>
@@ -19,6 +26,12 @@ function formatDate(str) {
 
   <body>
     <div class="cv-container">
+      <div class="page-header"> 
+        <div class="item-header">
+        <div>Curriculum Vitae</div>
+        <div>Version date: {formatDateFull(versionDate)}</div>
+        </div>
+      </div>
       <h1>{basics.name}</h1>
       <h2>Personal Information</h2>
       <hr />
@@ -32,9 +45,20 @@ function formatDate(str) {
         <h2>Education</h2>
         <hr />
         {education.map(ed => (
-          <div class="section-item">
-            <strong>{ed.institution}</strong>, {ed.area} ({ed.studyType})<br />
-            {formatDate(ed.startDate)} – {formatDate(ed.endDate)}
+          <div key={ed.institution} class="section-item item-entry">
+            <div class="item-header">
+              <div><strong>{ed.studyType}, {ed.area}</strong>, {ed.institution}</div>
+              <span class="date-range">{formatDate(ed.startDate)} – {formatDate(ed.endDate)}</span>
+            </div>
+            {ed.advisor && <div>Advisor: {ed.advisor}</div>} {/* show advisor only if listed in cv.json */}
+            {ed.courses && ed.courses.length > 0 && ( /* show coursework only if listed in cv.json */
+                <div class="indent-item"><i>Relevant coursework:</i></div> 
+                <ul class="two-column-list">
+                  {ed.courses.map((course, index) => (
+                    <li key={index}>{course}</li>
+                  ))}
+                </ul>
+            )}
           </div>
         ))}
       </section>
@@ -72,8 +96,8 @@ function formatDate(str) {
         <h2>Research Experience</h2>
         <hr />
         {researchExperience.map(res => (
-          <div class="section-item experience-entry">
-            <div class="experience-header">
+          <div class="section-item item-entry">
+            <div class="item-header">
               <div><strong>{res.lab}</strong>, {res.institution}</div>
               <span class="date-range">{formatDate(res.startDate)} – {formatDate(res.endDate)}</span>
             </div>
@@ -93,6 +117,16 @@ function formatDate(str) {
       <section>
         <h2>Teaching Experience</h2>
         <hr />
+        {teachingExperience.map(teach => (
+          <div class="section-item item-entry">
+            <div class="item-header">
+              <div><strong>{teach.title}</strong>, {teach.institution}</div>
+              <span class="date-range">{formatDate(teach.startDate)} – {formatDate(teach.endDate)}</span>
+            </div>
+            <div>Instructor: {teach.instructor}</div>
+            <div>Course: {teach.course}</div>
+          </div>
+        ))}
       </section>
 
       <section>
