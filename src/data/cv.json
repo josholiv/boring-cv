@@ -1,5 +1,5 @@
 {
-  "versionDate": "2025-07-24",
+  "versionDate": "2025-07-28",
 
   "basics": {
     "name": "John Doe",
@@ -185,90 +185,68 @@
     }
   ],
 
-      "awards": [
+  "grants": [
     {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "This is a summary."
+      "title": "Neuroscience Travel Grant",
+      "date": "2023-08-17",
+      "awarder": "Brain Science Foundation",
+      "award": "$5000",
+      "summary": ""
     },
     {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "This is a summary."
+      "title": "Innovative Research Grant",
+      "date": "2022-03-21",
+      "awarder": "Society for Advanced Cognitive Neuroscience",
+      "award": "$2500",
+      "summary": ""
     }
   ],
 
-  "volunteer": [
+  "awards": [
     {
-      "organization": "Organization",
-      "position": "Volunteer",
-      "url": "https://organization.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Description…",
-      "highlights": [
-        "Awarded 'Volunteer of the Month'"
-      ]
+      "title": "Excellence in Research Award",
+      "date": "2024-05-11",
+      "awarder": "Very Prestigious University",
+      "summary": ""
+    },
+    {
+      "title": "Best Poster Award",
+      "date": "2025-01-08",
+      "awarder": "Big Neuroscience Conference",
+      "summary": ""
+    }
+  ],
+
+  "memberships": [
+    {
+      "organization": "Science Association",
+      "startDate": "2016-01-16",
+      "endDate": "",
+      "summary": ""
+    },
+    {
+      "organization": "Psychology Society",
+      "startDate": "2019-12-14",
+      "endDate": "",
+      "summary": ""
+    },
+    {
+      "organization": "Research Organization",
+      "startDate": "2021-03-13",
+      "endDate": "",
+      "summary": ""
     }
   ],
 
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
-    }
-  ],
-
-  "certificates": [
+      "name": "Programming ability in Python"
+    },
     {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://[certificate].com"
-    }
-  ],
-
-  "languages": [
+      "name": "Extensive experience with MATLAB and Stata"
+    },
     {
-      "language": "English",
-      "fluency": "Native speaker"
-    }
-  ],
-
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }
-  ],
-
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
-    }
-  ],
-  
-  "projects": [
-    {
-      "name": "Project",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "Description...",
-      "highlights": [
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
+      "name": "Fluent in Spanish"
     }
   ]
 }

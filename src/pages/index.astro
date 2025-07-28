@@ -1,7 +1,7 @@
 ---
 import '../styles/cv.css';
 import cv from '../data/cv.json';
-const { versionDate, basics, education, work, publications, presentations, researchExperience, teachingExperience, awards, skills } = cv;
+const { versionDate, basics, education, work, publications, presentations, researchExperience, teachingExperience, grants, awards, memberships, skills } = cv;
 
 function formatDate(str) {
   if (!str) return '';
@@ -139,29 +139,56 @@ function formatDateFull(str) {
       <section>
         <h2>Grants &amp; Fellowships</h2>
         <hr />
+        {grants.map(g => (
+          <div class="section-item item-entry">
+            <div class="item-header">
+              <div><strong>{g.title}</strong>, {g.awarder}</div>
+              <span>{formatDate(g.date)}</span>
+            </div>
+            <div>{g.summary}</div>
+            <div>Award: {g.award}</div>
+          </div>
+        ))}
       </section>
 
       <section>
         <h2>Honors &amp; Awards</h2>
         <hr />
-        <ul>
-          {awards.map(a => (
-            <li class="section-item">
-              {a.title}, {a.awarder} – {formatDate(a.date)}
-            </li>
-          ))}
-        </ul>
+        {awards.map(a => (
+          <div class="section-item item-entry">
+            <div class="item-header">
+              <div><strong>{a.title}</strong>, {a.awarder}</div>
+              <span>{formatDate(a.date)}</span>
+            </div>
+            <div>{a.summary}</div>
+          </div>
+        ))}
       </section>
 
       <section>
         <h2>Professional Memberships</h2>
         <hr />
+        {memberships.map(mem => (
+          <div class="section-item item-entry">
+            <div class="item-header">
+              <div>{mem.organization}</div>
+              <span class="date-range">
+                {formatDate(mem.startDate)} – {mem?.endDate ? formatDate(mem.endDate) : 'present'}
+              </span>
+            </div>
+            <div>{mem.summary}</div>
+          </div>
+        ))}
       </section>
 
       <section>
         <h2>Skills</h2>
         <hr />
-        <p>{skills.map(s => s.name).join(', ')}</p>
+        <ul>
+          {skills.map(s => (
+            <li key={s.name}>{s.name}</li>
+          ))}
+        </ul>
       </section>
     </div>
   </body>
