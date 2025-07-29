@@ -1,12 +1,19 @@
 # Boring CV
 An Astro template for a bare-bones, printable webpage for an academic CV in json format. Designed to be "boring" on purpose, to resemble a relatively standard academic CV with no unnecessary bells and whistles. Just drop your CV data into the json and get a structured CV for web and print.
 
+![Boring CV desktop webpage page preview](boring-cv-screenshot1.png)
+
+![Boring CV desktop mobile page preview](boring-cv-screenshot2.png)
+
+![Boring CV desktop print preview](boring-cv-screenshot3.png)
+
 # Features
 * JSON-driven content (cv.json)
 * Pure CSS styling (no frameworks)
 * Customizable sections and format
 * Auto-formatted links for publications/presentations
 * Looks like a piece of paper
+* Responsive design for desktop and mobile viewing
 * "Print" button :)
 * Built using [Astro](https://astro.build/)
 
