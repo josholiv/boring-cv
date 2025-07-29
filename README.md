@@ -3,9 +3,7 @@ An Astro template for a bare-bones, printable webpage for an academic CV in json
 
 ![Boring CV desktop webpage page preview](boring-cv-screenshot1.png)
 
-![Boring CV desktop mobile page preview](boring-cv-screenshot2.png)
-
-![Boring CV desktop print preview](boring-cv-screenshot3.png)
+![Boring CV desktop print preview](boring-cv-screenshot2.png)
 
 # Features
 * JSON-driven content (cv.json)
