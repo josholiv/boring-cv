@@ -1,7 +1,7 @@
 ---
 import '../styles/cv.css';
 import cv from '../data/cv.json';
-const { versionDate, basics, education, work, publications, presentations, researchExperience, teachingExperience, grants, awards, memberships, skills } = cv;
+const { basics, education, publications, presentations, researchExperience, teachingExperience, grants, awards, affiliations, skills } = cv;
 
 function formatDate(str) {
   if (!str) return '';
@@ -19,7 +19,7 @@ function formatDateFull(str) {
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
-    <title>{basics.name} – CV</title>
+    <title>{basics.name} — CV</title>
     <meta name='viewport' content='width=device-width, initial-scale=1' />
   </head>
 
@@ -33,20 +33,14 @@ function formatDateFull(str) {
     <button id="print-button" class="print-button">Print</button>
 
     <div class="cv-container">
-      <div class="page-header"> 
-        <div class="item-header">
-        <div>Curriculum Vitae</div>
-        <div>Version date: {formatDateFull(versionDate)}</div>
-        </div>
-      </div>
       <h1>{basics.name}</h1>
       <h2>Personal Information</h2>
       <hr />
-      {basics.location.address} <br />
-      {basics.location.city}, {basics.location.postalCode}<br />
-      {basics.email}<br />
-      {basics.phone}<br />
-      {basics.url}
+      <div class="section-item">{basics.location.address} <br />
+      {basics.location.city}, {basics.location.postalCode}</div>
+      <div>{basics.phone}</div>
+      <div>{basics.email}</div>
+      <div>{basics.url}</div>
 
       <section>
         <h2>Education</h2>
@@ -75,7 +69,7 @@ function formatDateFull(str) {
         <hr />
         <div>
           {publications.map(pub => (
-            <div class="apa-entry">
+            <div class="reference-entry">
               <Fragment set:html={pub.authors.replace(/Doe, J\./g, "<strong>Doe, J.</strong>")} />
               ({pub.year}). {pub.name}. <em>{pub.publisher}</em>. <a href={pub.url} target="_blank">{pub.url}</a>
             </div>
@@ -88,7 +82,7 @@ function formatDateFull(str) {
         <hr />
         <div>
           {presentations.map(pres => (
-            <div class="apa-entry">
+            <div class="reference-entry">
               <Fragment set:html={pres.authors.replace(/Doe, J\./g, "<strong>Doe, J.</strong>")} />
               ({pres.year}, {pres.dateRange}). <i>{pres.name}</i> [{pres.type}]. {pres.conference}, {pres.location}. <a href={pres.url} target="_blank">{pres.url}</a>
             </div>
@@ -110,11 +104,15 @@ function formatDateFull(str) {
             </div>
             <div>Mentor: {res.mentor}</div>
             <div>Title: {res.title}</div>
-            <ul class="two-column-list">
-              {res.roles.map((role, index) => (
-                <li key={index}>{role}</li>
-              ))}
-            </ul>
+            
+            {res.duties && res.duties.length > 0 && ( /* show duties only if listed in cv.json */
+                <div class="indent-item"><i>Duties:</i></div> 
+                <ul class="two-column-list">
+                  {res.duties.map((duty, index) => (
+                    <li key={index}>{duty}</li>
+                  ))}
+                </ul>
+            )}
           </div>
         ))}
       </section>
@@ -166,18 +164,10 @@ function formatDateFull(str) {
       </section>
 
       <section>
-        <h2>Professional Memberships</h2>
+        <h2>Professional Affiliations</h2>
         <hr />
-        {memberships.map(mem => (
-          <div class="section-item item-entry">
-            <div class="item-header">
-              <div>{mem.organization}</div>
-              <span class="date-range">
-                {formatDate(mem.startDate)} – {mem?.endDate ? formatDate(mem.endDate) : 'present'}
-              </span>
-            </div>
-            <div>{mem.summary}</div>
-          </div>
+        {affiliations.map(aff => (
+              <div>{aff.organization}</div>
         ))}
       </section>
 

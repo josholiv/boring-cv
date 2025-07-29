@@ -1,7 +1,5 @@
 {
-  "versionDate": "2025-07-28",
-
-  "basics": {
+ "basics": {
     "name": "John Doe",
     "label": "Doctoral Student",
     "image": "",
@@ -127,7 +125,7 @@
       "title": "Research Assistant",
       "startDate": "2019-09-15",
       "endDate": "2025-04-15",
-      "roles": [
+      "duties": [
         "Administered neuropsychological tests",
         "Collected fMRI and behavioral data",
         "Designed experimental paradigms",
@@ -143,11 +141,8 @@
       "title": "Lab Manager",
       "startDate": "2015-10-15",
       "endDate": "2019-06-15",
-      "roles": [
-        "Coordinated participant recruitment and scheduling for neuroimaging studies",
-        "Managed Institutional Review Board (IRB) documentation and study compliance",
-        "Trained and supervised research assistants on data collection protocols",
-        "Prepared and presented posters at scientific conferences"
+      "duties": [
+        
       ]
     }
   ],
@@ -171,20 +166,6 @@
     }
   ],
 
-  "work": [
-    {
-      "name": "Company",
-      "position": "President",
-      "url": "https://company.com",
-      "startDate": "2013-01-01",
-      "endDate": "2014-01-01",
-      "summary": "Description…",
-      "highlights": [
-        "Started the company"
-      ]
-    }
-  ],
-
   "grants": [
     {
       "title": "Neuroscience Travel Grant",
@@ -205,7 +186,7 @@
   "awards": [
     {
       "title": "Excellence in Research Award",
-      "date": "2024-05-11",
+      "date": "2025-05-11",
       "awarder": "Very Prestigious University",
       "summary": ""
     },
@@ -217,33 +198,24 @@
     }
   ],
 
-  "memberships": [
+  "affiliations": [
     {
-      "organization": "Science Association",
-      "startDate": "2016-01-16",
-      "endDate": "",
-      "summary": ""
+      "organization": "Science Association"
     },
     {
-      "organization": "Psychology Society",
-      "startDate": "2019-12-14",
-      "endDate": "",
-      "summary": ""
+      "organization": "Psychology Society"
     },
     {
-      "organization": "Research Organization",
-      "startDate": "2021-03-13",
-      "endDate": "",
-      "summary": ""
+      "organization": "Research Organization"
     }
   ],
 
   "skills": [
     {
-      "name": "Programming ability in Python"
+      "name": "Extensive experience with MATLAB and SPSS"
     },
     {
-      "name": "Extensive experience with MATLAB and Stata"
+      "name": "Programming ability in Python"
     },
     {
       "name": "Fluent in Spanish"
