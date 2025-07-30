@@ -41,11 +41,11 @@ npm run dev
 ```
 
 # Customization
-## Edit /data/cv.json
+## Edit src/data/cv.json
 Update this file with your CV info (your name, education, publications, etc.)
 
 ## Change styles
-Modify /styles/cv.css to change fonts, layout, colors, etc.
+Modify src/styles/cv.css to change fonts, layout, colors, etc.
 
-## Add or remove sections
+## Add or remove sections in cv.json and index.astro
 You can add new sections in index.astro by following the existing map patterns. Add sections to cv.json, then add them to the const list in the frontmatter of index.astro. Then, insert the section in the location you'd like it to appear on the CV in the respective location in the main code of index.astro and code it to be formatted however you like.
