@@ -41,10 +41,10 @@ npm run dev
 ```
 
 # Customization
-## Edit src/data/cv.json
-Update this file with your CV info (your name, education, publications, etc.)
+## Add your CV info in cv.json
+Update src/data/cv.json with your CV info (your name, education, publications, etc.)
 
-## Change styles
+## Change styles in cv.css
 Modify src/styles/cv.css to change fonts, layout, colors, etc.
 
 ## Add or remove sections in cv.json and index.astro
